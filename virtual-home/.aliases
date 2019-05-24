@@ -12,7 +12,7 @@ alias -- -="cd -"
 alias d="cd ~/Documents/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias p="cd ~/projects"
+alias p="cd ~/Playground"
 alias g="git"
 
 # Detect which `ls` flavor is in use
@@ -88,6 +88,7 @@ alias fs="du -hs "
 alias ccat="pygmentize -g"
 
 alias kj="killjobs"
+
 killjobs(){
   kill $(jobs | awk '{b=substr($1,2,1); c="%"; print c b}')
 }
@@ -349,94 +350,94 @@ watch() {
   fswatch -0 -o --event Updated "$localpath" | xargs -0 -I file zsh -c "@debounce eval $rest";
 }
 
-# AMP Specific stuff
-
-watch-service() {
-  if [ -d $AMP_SAFARI_PATH/$1 ]; then
-    local olddir=$(pwd)
-    echo 'Starting watcher on service:' $1
-    watch $AMP_SAFARI_PATH/$1 dstart $1
-  else
-    echo $fg_bold[red] 'Safari:'$1 'Does not exist - skipping' $reset_color
-  fi
-}
-
-prod-tunnels() {
-  ssh -N -A -L 9042:10.0.41.196:9042 djdaniels@bastion.sandbox-amp.net
-  ssh -N -L 9200:internal-PROD-elb-elasticsearch-463607781.us-west-2.elb.amazonaws.com:9200 djdaniels@bastion.sandbox-amp.net
-}
-
-
-es-sb() {
-  ssh -N -L 9200:internal-sandbox-elb-es-02-240508465.us-west-2.elb.amazonaws.com:9200 djdaniels@bastion.sandbox-amp.net
-}
-
-es2-sb() {
-  ssh -N -L 9300:internal-sandbox-elb-elasticsearch-2135334639.us-west-2.elb.amazonaws.com:9200 djdaniels@bastion-sandbox.sandbox-amp.net
-}
-
-cass-sb() {
-  # ssh -N -A -L 9042:10.0.41.86:9042 djdaniels@bastion.sandbox-amp.net
-  ssh -N -A -L 9042:10.0.43.6:9042 -o GatewayPorts=yes djdaniels@bastion.sandbox-amp.net
-}
-
-tunnel-status() {
-  echo 'ElasticSearch'
-  whatsOnPort 9200
-  echo 'ElasticSearch 2'
-  whatsOnPort 9300
-  echo 'Cassandra'
-  whatsOnPort 9042
-}
-
-spider-tunnels () {
-  es-sb &
-  es2-sb &
-  cass-sb &
-}
-
-spider-status() {
-  dstatus
-  echo $fg[green] 'SSH Tunnels' $fg[reset]
-  tunnel-status
-}
-
-spider () {
-  case "$1" in
-    status)
-      spider-status
-      ;;
-    tunnels)
-      spider-tunnels
-      ;;
-    watch)
-      watch-service $2
-      ;;
-    *)
-      if [ ! -z $1 ]; then
-        local oldpwd=$(pwd)
-        echo 'Changing directories'
-        cd $AMP_SAFARI_PATH/spider
-        ./spider "$@"
-        cd ${oldpwd}
-      else
-        echo 'What do you want to do?'
-      fi
-  esac
-}
-
-#########################
-# CANIS MAJORIS ALIASES #
-#########################
-
-canis () {
-  if [ ! -z $1 ]; then
-    local oldpwd=$(pwd)
-    echo 'Changing directories'
-    cd $AMP_CANIS_PATH
-    npm run $1
-    cd ${oldpwd}
-  else
-    echo 'What do you want to do?'
-  fi
-}
+# # AMP Specific stuff
+#
+# watch-service() {
+#   if [ -d $AMP_SAFARI_PATH/$1 ]; then
+#     local olddir=$(pwd)
+#     echo 'Starting watcher on service:' $1
+#     watch $AMP_SAFARI_PATH/$1 dstart $1
+#   else
+#     echo $fg_bold[red] 'Safari:'$1 'Does not exist - skipping' $reset_color
+#   fi
+# }
+#
+# prod-tunnels() {
+#   ssh -N -A -L 9042:10.0.41.196:9042 borajimin@bastion.sandbox-amp.net
+#   ssh -N -L 9200:internal-PROD-elb-elasticsearch-463607781.us-west-2.elb.amazonaws.com:9200 borajimin@bastion.sandbox-amp.net
+# }
+#
+#
+# es-sb() {
+#   ssh -N -L 9200:internal-sandbox-elb-es-02-240508465.us-west-2.elb.amazonaws.com:9200 borajimin@bastion.sandbox-amp.net
+# }
+#
+# es2-sb() {
+#   ssh -N -L 9300:internal-sandbox-elb-elasticsearch-2135334639.us-west-2.elb.amazonaws.com:9200 borajimin@bastion-sandbox.sandbox-amp.net
+# }
+#
+# cass-sb() {
+#   # ssh -N -A -L 9042:10.0.41.86:9042 borajimin@bastion.sandbox-amp.net
+#   ssh -N -A -L 9042:10.0.43.6:9042 -o GatewayPorts=yes borajimin@bastion.sandbox-amp.net
+# }
+#
+# tunnel-status() {
+#   echo 'ElasticSearch'
+#   whatsOnPort 9200
+#   echo 'ElasticSearch 2'
+#   whatsOnPort 9300
+#   echo 'Cassandra'
+#   whatsOnPort 9042
+# }
+#
+# spider-tunnels () {
+#   es-sb &
+#   es2-sb &
+#   cass-sb &
+# }
+#
+# spider-status() {
+#   dstatus
+#   echo $fg[green] 'SSH Tunnels' $fg[reset]
+#   tunnel-status
+# }
+#
+# spider () {
+#   case "$1" in
+#     status)
+#       spider-status
+#       ;;
+#     tunnels)
+#       spider-tunnels
+#       ;;
+#     watch)
+#       watch-service $2
+#       ;;
+#     *)
+#       if [ ! -z $1 ]; then
+#         local oldpwd=$(pwd)
+#         echo 'Changing directories'
+#         cd $AMP_SAFARI_PATH/spider
+#         ./spider "$@"
+#         cd ${oldpwd}
+#       else
+#         echo 'What do you want to do?'
+#       fi
+#   esac
+# }
+#
+# #########################
+# # CANIS MAJORIS ALIASES #
+# #########################
+#
+# canis () {
+#   if [ ! -z $1 ]; then
+#     local oldpwd=$(pwd)
+#     echo 'Changing directories'
+#     cd $AMP_CANIS_PATH
+#     npm run $1
+#     cd ${oldpwd}
+#   else
+#     echo 'What do you want to do?'
+#   fi
+# }

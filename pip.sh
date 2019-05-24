@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 
-# install_python_env
-# install_code_analysis
-# install_data_analysis
+# write custom script to initialize a nice python environment.
+
 
 function py_install_env {
-	# brew install python3
-	# pip3 install virtualenv
+	brew install python3
+	pip3 install virtualenv
+	
+	# install globally
+	pip install pylint
+	pip install psutil
 }
 
 function py_code_analysis {
@@ -18,3 +21,7 @@ function py_data_analysis {
 	pip3 install numpy
 	pip3 install pandas
 }
+
+install_python_env
+install_code_analysis
+install_data_analysis

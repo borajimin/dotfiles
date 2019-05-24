@@ -25,7 +25,6 @@ brew_install_core_utils() {
 	brew install adns
 	brew install wget --with-iri # Install `wget` with IRI support.
 	brew cask install --appdir="/Applications" java
-	brew cask install --appdir="/Applications" osxfuse
 	brew cask install --appdir="/Applications" xquartz
 	brew cask install --appdir="/Applications" keepingyouawake
 	brew cask install --appdir="/Applications" dropbox
@@ -46,7 +45,6 @@ brew_install_encryption() {
 	brew install openssh
 	brew cask install --appdir="/Applications" gpg-suite
 	brew cask install --appdir="/Applications" veracrypt
-	brew cask install --appdir="/Applications" exodus
 }
 
 brew_install_bash4() {
@@ -125,39 +123,13 @@ brew_install_ctf_tools() {
  brew install eigen
 }
 
-brew_install_licensed_apps() {
-	brew cask install --appdir="/Applications" istat-menus
-	brew cask install --appdir="/Applications" 1password
-	brew cask install --appdir="/Applications" daisydisk
-	brew cask install --appdir="/Applications" microsoft-office
-	brew cask install --appdir="/Applications" airmail-beta
-	brew cask install --appdir="/Applications" alfred
-	brew cask install --appdir="/Applications" bartender
-	brew cask install --appdir="/Applications" dash
-	brew cask install --appdir="/Applications" little-snitch
-	brew cask install --appdir="/Applications" micro-snitch
-	brew cask install --appdir="/Applications" ipartition
-	brew cask install --appdir="/Applications" fantastical
-}
-
 brew_install_gaming() {
-	brew cask install --appdir="/Applications" wine-stable
-	brew cask install --appdir="/Applications" battle-net
-	brew cask install --appdir="/Applications" wineskin-winery
 	brew cask install --appdir="/Applications" steam
-	brew cask install --appdir="/Applications" firestormos
-}
-
-brew_install_gamedev() {
-	brew cask install --appdir="/Applications" epic-games
-	brew cask install --appdir="/Applications" unity
 }
 
 brew_install_communication() {
-	brew cask install --appdir="/Applications" discord
 	brew cask install --appdir="/Applications" slack
 	brew cask install --appdir="/Applications" zoom
-	brew cask install --appdir="/Applications" chatology
 }
 
 brew_install_browsers() {
@@ -199,37 +171,30 @@ brew_install_misc() {
 	brew install ansible
 	brew install apache-zeppelin
 	brew install flow
+	brew install pyenv
+	brew install pyenv-virtualenv
 	brew cask install --appdir="/Applications" virtualbox
 	brew cask install --appdir="/Applications" docker
-	brew cask install --appdir="/Applications" wifi-explorer
-	brew cask install --appdir="/Applications" hazel
-	brew cask install --appdir="/Applications" textual
-	brew cask install --appdir="/Applications" freecad
 	brew cask install --appdir="/Applications" postman
 	brew cask install --appdir="/Applications" appcleaner
 	brew cask install --appdir="/Applications" geektool
 	brew cask install --appdir="/Applications" atom
 	brew install git
 	brew install git-lfs
-	brew cask install --appdir="/Applications" gitkraken
 	brew cask install --appdir="/Applications" kdiff3
 	brew cask install --appdir="/Applications" sourcetree
-	brew cask install --appdir="/Applications" kindle
 	brew cask install --appdir="/Applications" spectacle
 	brew cask install --appdir="/Applications" wireshark-chmodbpf
-	brew cask install --appdir="/Applications" beamer
 	brew cask install --appdir="/Applications" libreoffice
 	brew cask install --appdir="/Applications" spotify
 	brew cask install --appdir="/Applications" cakebrew
-	brew cask install --appdir="/Applications" cardhop
+	brew cask install --appdir="/Applications" franz
 	brew cask install --appdir="/Applications" grammarly
 	brew cask install --appdir="/Applications" mactracker
 	brew cask install --appdir="/Applications" teamviewer
 	brew cask install --appdir="/Applications" charles
 	brew cask install --appdir="/Applications" hex-fiend
 	brew cask install --appdir="/Applications" meld
-	brew cask install --appdir="/Applications" transmission
-	brew cask install --appdir="/Applications" timely
 }
 
 # Deprecated stuff maybe... delete after verifying procedure works as is

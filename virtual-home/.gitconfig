@@ -69,7 +69,7 @@
 [core]
 
 	# Use custom `.gitignore` and `.gitattributes`
-	excludesfile = /Users/panda/.gitignore
+	excludesfile = /Users/jiminha/.gitignore
 	attributesfile = ~/.gitattributes
 
 	# Treat spaces before tabs and all kinds of trailing whitespace as an error
@@ -118,7 +118,7 @@
 
 	# https://help.github.com/articles/signing-commits-using-gpg/
 	gpgsign = false
-	template = /Users/panda/.stCommitMsg
+	template = /Users/jiminha/.stCommitMsg
 
 [diff]
 
@@ -174,8 +174,8 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 [user]
-	email = djdanielsh@gmail.com
-	name = Commando Panda
+	email = borajimin@gmail.com
+	name = borajimin
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
