@@ -1,12 +1,21 @@
 #!/usr/bin/env bash
 
-# Install command-line tools using Homebrew.
-
+# Install HomeBrew.
+which -s brew
+if [[ $? != 0 ]] ; then
+    # Install Homebrew
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+brew tap bramstein/webfonttools
+brew tap caskroom/fonts
+brew tap caskroom/versions
 # Make sure we’re using the latest Homebrew.
 brew update
-
-# Upgrade any already-installed formulae.
 brew upgrade
+# Remove outdated versions from the cellar.
+brew cleanup
+
+# Install command-line tools using Homebrew.
 
 # Save Homebrew’s installed location.
 BREW_PREFIX=$(brew --prefix)

@@ -1,0 +1,6 @@
+GIT_AUTHOR_NAME="JiMin Ha"
+GIT_COMMITTER_NAME="borajimin"
+git config --global user.name "borajimin"
+GIT_AUTHOR_EMAIL="borajimin@gmail.com"
+GIT_COMMITTER_EMAIL="borajimin@gmail.com"
+git config --global user.email "borajimin@gmail.com"
