@@ -5,7 +5,7 @@ export PATH="/usr/local/sbin:$PATH"
 export ZPLUG_HOME=/usr/local/opt/zplug
 export PYENV_ROOT="$HOME/.pyenv"
 
-eval $(docker-machine env) &
+# eval $(docker-machine env) &
 
 source $ZPLUG_HOME/init.zsh
 # We want bash specific ones overwritten
