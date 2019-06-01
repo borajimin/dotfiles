@@ -61,6 +61,7 @@ brew_install_zsh_env() {
 	brew install zsh-autosuggestions
 	brew install zplug
 	brew install neofetch
+	brew install autojump
 	# pip3 install virtualenv
 	if ! fgrep -q '/usr/local/bin/zsh' /etc/shells; then
 		echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells;

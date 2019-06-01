@@ -13,11 +13,6 @@ source ~/.exports
 source ~/.functions
 source ~/.aliases
 
-ulimit -n 21504
-# ulimit -u 2000
-ulimit -c 2000
-ulimit -s 10000
-
 # The following lines were added by compinstall
 zstyle :compinstall filename '~/.zshrc'
 
@@ -43,7 +38,7 @@ zplug "plugins/npm", from:oh-my-zsh
 zplug "plugins/brew", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/docker-machine", from:oh-my-zsh
-zplug "plugins/autojump", from:oh-my-zsh
+# zplug "plugins/autojump", from:oh-my-zsh
 # https://github.com/zsh-users/zsh-autosuggestions requires brew
 zplug "zsh-users/zsh-autosuggestions"
 # https://github.com/zsh-users/zsh-completions requires brew

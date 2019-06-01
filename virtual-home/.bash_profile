@@ -2,10 +2,6 @@
 export PATH="$HOME/bin:$PATH";
 echo 'Running .bash_profile'
 
-ulimit -n 21504
-ulimit -u 2000
-ulimit -c 2000
-ulimit -s 10000
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
