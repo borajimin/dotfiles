@@ -56,6 +56,9 @@ alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 alias canary='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary'
 
+# VS Code
+alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
+
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
